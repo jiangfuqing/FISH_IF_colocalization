@@ -60,24 +60,31 @@ Additional details and intricacies about the code will be updated often.
 
 The manually called foci are typically present under a subfolder called Foci_calls (as referenced above). Under this folder, csv files with pointers to unique image set ID (01, 02 ,... etc) is present. Examples for the set of brd4(IF) and nanog (FISH) are given above.
 
-* For example if the FISH foci name has number 12, like prdm12, please make sure that you don't name the manually called or randomly called foci file with 12 in it because it will confuse with uniq folder id. Good roundabouts include prdm_1_2 or prdm_twelve. This can be easily avoided if add stringent constraints on where the unique identifier will appear, or make it more than a number,or a 'longer' number! This update is arriving shortly.
+*	For example if the FISH foci name has number 12, like prdm12, please make sure that you don't name the manually called or randomly called foci file with 12 in it because it will confuse with uniq folder id. Good roundabouts include prdm_1_2 or prdm_twelve. This can be easily avoided if add stringent constraints on where the unique identifier will appear, or make it more than a number,or a 'longer' number! This update is arriving shortly.
 
 Each CSV file should have the following columns:
 
-* Volume,Surface,Intensity,Centre X,Centre Y,Centre Z,Centre int X,Centre int Y,Centre int Z
+*	Volume,Surface,Intensity,Centre X,Centre Y,Centre Z,Centre int X,Centre int Y,Centre int Z
 
 
 Columns 4,5, & 6 are read to as X_center, Y_center, and Z_center. Other columns can all be 0's, but must be present. This is because this standard file format is that outputted by Fiji/Image J.
 
-## Parsing output data
+### Parsing output data
 If the output folder defined is foo, two output folders foo and foo_random will be created under the parent folder where the Images subfolder exist. Further, if random_auto_call is set to 1, then a subfolder Random_foci_auto will also be created with a list of CSV files of randomly called nuclear foci.
 
 Under foo/Combined_data/, the following files are created:
 * **nanog_brd4_production_average_image** (fig,svg) - Average 2D projection plot of FISH/IF colocalization around FISH centroid. (typically +/- 5 stacks)
+
 * **nanog_brd4_production_IRF_image** (fig,svg) - Average 3D IRF plot of FISH/IF colocalization
+
 * **nanog_brd4_foci_statistics.csv** - File with statistics on individual foci - Centroid, Average FISH/IF signal close to centroid, and source image file (replicate ID)
+
 * **Total_data.mat** - Raw matrices of Image and IRF data under:
-  * FISH_data/IF_data - Average 2D projection data of size (N*N*R), where N is the length scale (in pixels) assayed and R - number of replicates
-  * FISH_IRF/IF_IRF - IRF data stored in a cell array (R*1), where each cell contains the dist function (bins of distance in um), and intensity arrays.
-  * image_data_set - The file ID of the input data set.
-  * input_params - The complete listing of all input parametrization values is found under this variable
+
+    * FISH_data/IF_data - Average 2D projection data of size (N*N*R), where N is the length scale (in pixels) assayed and R - number of replicates
+
+    * FISH_IRF/IF_IRF - IRF data stored in a cell array (R*1), where each cell contains the dist function (bins of distance in um), and intensity arrays.
+
+    * image_data_set - The file ID of the input data set.
+
+    * input_params - The complete listing of all input parametrization values is found under this variable
