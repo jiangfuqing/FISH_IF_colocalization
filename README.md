@@ -3,7 +3,7 @@
 ## About
 
 This code was employed to perform analysis and generate visualization
-for studying colocalization b/w FISH & IF channels for figures reported in [Sabari & D'allAgnese et al., 2018](https://10.1126/science.aar3958) and [Boija & Klein et al., 2018](https://10.1016/j.cell.2018.10.042).
+for studying colocalization b/w FISH & IF channels for figures reported in [Sabari & D'allAgnese et al., 2018](https://doi.org/10.1126/science.aar3958) and [Boija & Klein et al., 2018](https://doi.org/10.1016/j.cell.2018.10.042).
 
 ### Dependencies:
 
