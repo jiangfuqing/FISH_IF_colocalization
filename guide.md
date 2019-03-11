@@ -6,7 +6,7 @@ The standard organization structure for the input image data is specified below,
 
 Within each replicate, the input_channel identifier for FISH/IF are used to identify the respective images.
 
-A typical folder structure is listed below, where the manually curated FISH foci (under Foci_calls) and manually generated control locations (under Random_foci) are provided as input. In general, the program can generate both of the above types of data on it's own. 
+A typical folder structure is listed below, where the manually curated FISH foci (under Foci_calls) and manually generated control locations (under Random_foci) are provided as input. In general, the program can generate both of the above types of data on it's own.
 
 * nanog_brd4
 	* Images
@@ -73,11 +73,11 @@ Columns 4,5, & 6 are read to as X_center, Y_center, and Z_center. Other columns 
 If the output folder defined is foo, two output folders foo and foo_random will be created under the parent folder where the Images subfolder exist. Further, if random_auto_call is set to 1, then a subfolder Random_foci_auto will also be created with a list of CSV files of randomly called nuclear foci.
 
 Under foo/Combined_data/, the following files are created:
-- **nanog_brd4_production_average_image** (fig,svg) - Average 2D projection plot of FISH/IF colocalization around FISH centroid. (typically +/- 5 stacks)
-- **nanog_brd4_production_IRF_image** (fig,svg) - Average 3D IRF plot of FISH/IF colocalization
-- **nanog_brd4_foci_statistics.csv** - File with statistics on individual foci - Centroid, Average FISH/IF signal close to centroid, and source image file (replicate ID)
-- **Total_data.mat** - Raw matrices of Image and IRF data under:
-  - FISH_data/IF_data - Average 2D projection data of size (N*N*R), where N is the length scale (in pixels) assayed and R - number of replicates
-  - FISH_IRF/IF_IRF - IRF data stored in a cell array (R*1), where each cell contains the dist function (bins of distance in um), and intensity arrays.
-  - image_data_set - The file ID of the input data set.
-  - input_params - The complete listing of all input parametrization values is found under this variable
+* **nanog_brd4_production_average_image** (fig,svg) - Average 2D projection plot of FISH/IF colocalization around FISH centroid. (typically +/- 5 stacks)
+* **nanog_brd4_production_IRF_image** (fig,svg) - Average 3D IRF plot of FISH/IF colocalization
+* **nanog_brd4_foci_statistics.csv** - File with statistics on individual foci - Centroid, Average FISH/IF signal close to centroid, and source image file (replicate ID)
+* **Total_data.mat** - Raw matrices of Image and IRF data under:
+  * FISH_data/IF_data - Average 2D projection data of size (N*N*R), where N is the length scale (in pixels) assayed and R - number of replicates
+  * FISH_IRF/IF_IRF - IRF data stored in a cell array (R*1), where each cell contains the dist function (bins of distance in um), and intensity arrays.
+  * image_data_set - The file ID of the input data set.
+  * input_params - The complete listing of all input parametrization values is found under this variable

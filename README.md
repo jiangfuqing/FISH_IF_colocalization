@@ -63,22 +63,22 @@ Simply run *call_3D_analysis_code.m* for the code to run. A set of minimum param
 
 #### Deeper dive into setting parameters
 Many other important (thresholding/Microscope/pixel size for e.g.) parameters are set in params.m. They are currently set to values that have been optimized for studies re: FISH-IF experiments done in mESCs. These are variables of the **input_params class**, and include:
-- **threshold_multiplier** - Multiplicative threshold for intensity thresholding
-- **FISH_threshold** - Minimum area (in pixels) for thresholding
-- **xpixel** - Pixel length (um) along x/y directions
-- **zpixel** - Pixel length (um) along z stack
-- **distance_threshold** - Pixel displacement (um) across z-stacks of centroid that is permissible for stitching
-- **automatically_call_foci** - Flag variable that decides whether (1)
+* **threshold_multiplier** - Multiplicative threshold for intensity thresholding
+* **FISH_threshold** - Minimum area (in pixels) for thresholding
+* **xpixel** - Pixel length (um) along x/y directions
+* **zpixel** - Pixel length (um) along z stack
+* **distance_threshold** - Pixel displacement (um) across z-stacks of centroid that is permissible for stitching
+* **automatically_call_foci** - Flag variable that decides whether (1)
 or not (0) automatic foci detection should happen. Default setting
 is ON (1).
-- **curate_called_foci** - Flag variable that decides whether (1)
+* **curate_called_foci** - Flag variable that decides whether (1)
 or not (0) automatically called foci are curated across a manually
 provided csv list of foci. Default setting is OFF (0).
-- **volume_threshold** - Minimum volume (um^3) for accepting foci.
+* **volume_threshold** - Minimum volume (um^3) for accepting foci.
 Default setting is 0.05 um^3 <-- experience for FISH data in mESCs.
-- **size_box** - Half length of box around FISH centroid (in pixels)
+* **size_box** - Half length of box around FISH centroid (in pixels)
 for which the IF data is gathered. Default is 25 pixels ~ 1.5 um.
-- **random_auto_call** - Flag variable that decides whether (1)
+* **random_auto_call** - Flag variable that decides whether (1)
 or not (0) to call random foci based on DAPI channel data. Default
 setting is ON (1) - requires 405 channel image data.
 
@@ -86,11 +86,11 @@ setting is ON (1) - requires 405 channel image data.
 If the output folder defined is foo, two output folders foo and foo_random will be created under the parent folder where the Images subfolder exist. Further, if random_auto_call is set to 1, then a subfolder Random_foci_auto will also be created with a list of CSV files of randomly called nuclear foci.
 
 Under foo/Combined_data/, the following files are created:
-- **nanog_brd4_production_average_image** (fig,svg) - Average 2D projection plot of FISH/IF colocalization around FISH centroid. (typically +/- 5 stacks)
-- **nanog_brd4_production_IRF_image** (fig,svg) - Average 3D IRF plot of FISH/IF colocalization
-- **nanog_brd4_foci_statistics.csv** - File with statistics on individual foci - Centroid, Average FISH/IF signal close to centroid, and source image file (replicate ID)
-- **Total_data.mat** - Raw matrices of Image and IRF data under:
-  - FISH_data/IF_data - Average 2D projection data of size (N*N*R), where N is the length scale (in pixels) assayed and R - number of replicates
-  - FISH_IRF/IF_IRF - IRF data stored in a cell array (R*1), where each cell contains the dist function (bins of distance in um), and intensity arrays.
-  - image_data_set - The file ID of the input data set.
-  - input_params - The complete listing of all input parametrization values is found under this variable
+* **nanog_brd4_production_average_image** (fig,svg) - Average 2D projection plot of FISH/IF colocalization around FISH centroid. (typically +/- 5 stacks)
+* **nanog_brd4_production_IRF_image** (fig,svg) - Average 3D IRF plot of FISH/IF colocalization
+* **nanog_brd4_foci_statistics.csv** - File with statistics on individual foci - Centroid, Average FISH/IF signal close to centroid, and source image file (replicate ID)
+* **Total_data.mat** - Raw matrices of Image and IRF data under:
+  * FISH_data/IF_data - Average 2D projection data of size (N*N*R), where N is the length scale (in pixels) assayed and R - number of replicates
+  * FISH_IRF/IF_IRF - IRF data stored in a cell array (R*1), where each cell contains the dist function (bins of distance in um), and intensity arrays.
+  * image_data_set - The file ID of the input data set.
+  * input_params - The complete listing of all input parametrization values is found under this variable
