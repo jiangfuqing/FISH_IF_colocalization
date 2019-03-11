@@ -6,18 +6,21 @@ The standard organization structure for the input image data is specified below,
 
 Within each replicate, the input_channel identifier for FISH/IF are used to identify the respective images.
 
-A typical folder structure is listed below, where the manually curated FISH foci (under Foci_calls) and manually generated control locations (under Random_foci) are provided as input. In general, the program can generate both of the above types of data on it's own.
+A typical folder structure is listed below, where the manually curated FISH foci (under Foci_calls) and manually generated control locations (under Random_foci) are provided as input. In general, the program can generate both of the above types of data on it's own. 
 
 * nanog_brd4
 	* Images
 		* 	E01
+			* nanog_brd4_01......._405_DAPI.TIF
 			* 	nanog_brd4_01......._488_GFP.TIF
 			* nanog_brd4_01........_561_CY3.TIF
 		* E02
+			* nanog_brd4_02......._405_DAPI.TIF
 			* 	nanog_brd4_02......._488_GFP.TIF
 			* nanog_brd4_02........_561_CY3.TIF
 		.....................
 		* E12
+			* nanog_brd4_12......._405_DAPI.TIF
 			* 	nanog_brd4_12......._488_GFP.TIF
 			* nanog_brd4_12........_561_CY3.TIF
 

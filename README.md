@@ -36,7 +36,9 @@ This code **broadly** has two aims:
 
     * Intensity distribution of the IF channel around the FISH foci.
 
-* These steps are repeated at randomly located nuclear positions (within the DAPI-positive channel) to obtain a control data-set.
+* These steps are repeated at randomly located nuclear positions (within the DAPI-positive channel) to obtain a control data-set. The random nuclear positions can be generated automatically or provided by the user.
+
+**Note**-  If you wish to perform random control based on the DAPI channel to identify control nuclear positions, make sure those channels are included in the input data files!
 
 
 ### How to run code
